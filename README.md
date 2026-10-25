@@ -1,4 +1,4 @@
-# Project 2: Messy Code Improvement (C++)
+# Project 2: Messy Code Improvement (Python)
 
 Shows a messy C++ program and the improved version of the same logic, with the improvements explained.
 
