@@ -1,47 +1,38 @@
-// Project 2: Messy Code Improvement
-// Shows a messy program and the improved, readable version of the same logic.
-//
-// ---------- BEFORE (messy) ----------
-//   int main(){int a[5]={55,78,90,34,67};int s=0;int m=a[0];
-//   for(int i=0;i<5;i++){s=s+a[i];if(a[i]>m)m=a[i];}
-//   cout<<s<<" "<<s/5<<" "<<m;}
-//
-// Problems: no spacing, unclear names, magic number 5, integer division,
-// no functions, no labels on the output.
-//
-// ---------- AFTER (improved, below) ----------
-#include <algorithm>
-#include <iostream>
-#include <numeric>
-#include <vector>
-using namespace std;
+# Project 2: Messy Code Improvement (C++)
 
-int calculateTotal(const vector<int>& marks) {
-    return accumulate(marks.begin(), marks.end(), 0);
-}
+Shows a messy C++ program and the improved version of the same logic, with the improvements explained.
 
-double calculateAverage(const vector<int>& marks) {
-    if (marks.empty()) return 0.0;
-    return static_cast<double>(calculateTotal(marks)) / marks.size();
-}
+## Description
+The top of the file keeps the original messy snippet in comments. The code below it does the same job (total, average, highest mark, and grade for a list of marks) but is organized into small, well-named functions.
 
-int findHighest(const vector<int>& marks) {
-    return *max_element(marks.begin(), marks.end());
-}
+## Technologies
+- C++17
+- Standard library: `iostream`, `vector`, `algorithm`, `numeric`
 
-char gradeFor(double average) {
-    if (average >= 75) return 'A';
-    if (average >= 60) return 'B';
-    if (average >= 40) return 'C';
-    return 'F';
-}
+## What Was Improved
+- Clear names instead of single letters (`marks` instead of `a`, `calculateTotal` instead of `s`)
+- Separate functions for total, average, highest mark, and grade
+- No magic number: the size comes from the vector instead of a hard-coded 5
+- Correct average using `double` instead of integer division
+- Labeled output instead of bare numbers
+- Consistent spacing and formatting
 
-int main() {
-    const vector<int> marks = {55, 78, 90, 34, 67};
+## Setup and Run
+```
+g++ -std=c++17 project2_messy_code_improvement.cpp -o improved
+./improved
+```
 
-    cout << "Total marks : " << calculateTotal(marks) << "\n";
-    cout << "Average     : " << calculateAverage(marks) << "\n";
-    cout << "Highest mark: " << findHighest(marks) << "\n";
-    cout << "Grade       : " << gradeFor(calculateAverage(marks)) << "\n";
-    return 0;
-}
+## Example Output
+```
+Total marks : 324
+Average     : 64.8
+Highest mark: 90
+Grade       : B
+```
+
+## Notes
+The messy snippet is an example I wrote to demonstrate the technique. If your assignment needs your own original messy script, replace the "BEFORE" comment and the code with yours.
+
+## Author
+Prathvi Singh
