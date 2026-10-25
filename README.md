@@ -1,6 +1,6 @@
 # Project 2: Messy Code Improvement (Python)
 
-Shows a messy C++ program and the improved version of the same logic, with the improvements explained.
+Shows a messy Python program and the improved version of the same logic, with the improvements explained.
 
 ## Description
 The top of the file keeps the original messy snippet in comments. The code below it does the same job (total, average, highest mark, and grade for a list of marks) but is organized into small, well-named functions.
